@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package zrpc;
+
+service ZrpcService {
+    rpc Stream (stream ZMessagePack) returns (stream ZMessagePack) {}
+}
+
+
+message ZMessagePack {
+    string traceId = 1;
+    string data = 2;
+    // map<string, string > header = 1;
+    // bytes body = 2;
+}
